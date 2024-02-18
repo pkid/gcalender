@@ -5,6 +5,7 @@
 pod 'GoogleSignIn'
 pod 'GoogleSignInSwiftSupport'
 pod 'GoogleAPIClientForREST'
+pod 'GoogleAPIClientForREST/Calendar'
 
 target 'GCalendar2' do
   # Comment the next line if you don't want to use dynamic frameworks
