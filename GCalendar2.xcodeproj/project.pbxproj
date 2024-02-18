@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9614643F72BD19BF7EC83AC2 /* Pods_GCalendar2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE32517FFCC8A99D2230947 /* Pods_GCalendar2.framework */; };
 		DC2D180E2B8245C9006F6ABB /* GCalendar2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2D180D2B8245C9006F6ABB /* GCalendar2App.swift */; };
 		DC2D18102B8245C9006F6ABB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2D180F2B8245C9006F6ABB /* ContentView.swift */; };
 		DC2D18122B8245CB006F6ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC2D18112B8245CB006F6ABB /* Assets.xcassets */; };
@@ -14,11 +15,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5EE32517FFCC8A99D2230947 /* Pods_GCalendar2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GCalendar2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F4EAA6F0E47881FEB6B8F1 /* Pods-GCalendar2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCalendar2.debug.xcconfig"; path = "Target Support Files/Pods-GCalendar2/Pods-GCalendar2.debug.xcconfig"; sourceTree = "<group>"; };
 		DC2D180A2B8245C9006F6ABB /* GCalendar2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCalendar2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2D180D2B8245C9006F6ABB /* GCalendar2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCalendar2App.swift; sourceTree = "<group>"; };
 		DC2D180F2B8245C9006F6ABB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DC2D18112B8245CB006F6ABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC2D18142B8245CB006F6ABB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DC2D18352B827A1B006F6ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EB92B826C5BC5A09FF9D2773 /* Pods-GCalendar2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GCalendar2.release.xcconfig"; path = "Target Support Files/Pods-GCalendar2/Pods-GCalendar2.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +31,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9614643F72BD19BF7EC83AC2 /* Pods_GCalendar2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2843DDE737D199273879C91E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EE32517FFCC8A99D2230947 /* Pods_GCalendar2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DC2D18012B8245C9006F6ABB = {
 			isa = PBXGroup;
 			children = (
 				DC2D180C2B8245C9006F6ABB /* GCalendar2 */,
 				DC2D180B2B8245C9006F6ABB /* Products */,
+				EFB7FFCF531E453555181FA6 /* Pods */,
+				2843DDE737D199273879C91E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +67,7 @@
 		DC2D180C2B8245C9006F6ABB /* GCalendar2 */ = {
 			isa = PBXGroup;
 			children = (
+				DC2D18352B827A1B006F6ABB /* Info.plist */,
 				DC2D180D2B8245C9006F6ABB /* GCalendar2App.swift */,
 				DC2D180F2B8245C9006F6ABB /* ContentView.swift */,
 				DC2D18112B8245CB006F6ABB /* Assets.xcassets */,
@@ -67,6 +84,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		EFB7FFCF531E453555181FA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3F4EAA6F0E47881FEB6B8F1 /* Pods-GCalendar2.debug.xcconfig */,
+				EB92B826C5BC5A09FF9D2773 /* Pods-GCalendar2.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +100,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC2D18182B8245CB006F6ABB /* Build configuration list for PBXNativeTarget "GCalendar2" */;
 			buildPhases = (
+				6FBC6BEE84AAA5D2E057AA34 /* [CP] Check Pods Manifest.lock */,
 				DC2D18062B8245C9006F6ABB /* Sources */,
 				DC2D18072B8245C9006F6ABB /* Frameworks */,
 				DC2D18082B8245C9006F6ABB /* Resources */,
+				37A9DD39ED250311FA807E33 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37A9DD39ED250311FA807E33 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GCalendar2/Pods-GCalendar2-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GCalendar2/Pods-GCalendar2-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GCalendar2/Pods-GCalendar2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FBC6BEE84AAA5D2E057AA34 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GCalendar2-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DC2D18062B8245C9006F6ABB /* Sources */ = {
@@ -266,6 +336,7 @@
 		};
 		DC2D18192B8245CB006F6ABB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3F4EAA6F0E47881FEB6B8F1 /* Pods-GCalendar2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -273,7 +344,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GCalendar2/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GCalendar2/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -294,6 +367,7 @@
 		};
 		DC2D181A2B8245CB006F6ABB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB92B826C5BC5A09FF9D2773 /* Pods-GCalendar2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,7 +375,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GCalendar2/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GCalendar2/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import GoogleSignInSwift
+import GoogleSignIn
 
 @main
 struct GCalendar2App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().onOpenURL { url in
+                GIDSignIn.sharedInstance.handle(url)
+            }.onAppear {
+                GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+                    // Check if `user` exists; otherwise, do something with `error`
+                }
+            }
         }
     }
 }
