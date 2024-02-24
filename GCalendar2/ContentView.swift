@@ -16,12 +16,17 @@ import GTMSessionFetcher
 
 
 struct ContentView: View {
+    @State private var date = Date()
+    @State private var startTime = Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: Date()) ?? Date()
+    @State private var endTime = Calendar.current.date(bySettingHour: 10, minute: 0, second: 0, of: Date()) ?? Date()
+    @State private var eventTitle = ""
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            TextField("Event Title", text: $eventTitle)
+            DatePicker("Date", selection: $date, displayedComponents: .date)
+            DatePicker("Start Time", selection: $startTime, displayedComponents: .hourAndMinute)
+            DatePicker("End Time", selection: $endTime, displayedComponents: .hourAndMinute)
             
             GoogleSignInButton(action: handleSignInButton)
             
@@ -29,34 +34,10 @@ struct ContentView: View {
         .padding()
     }
     
-    // Helper to build date
-    func buildDate(date: Date) -> GTLRCalendar_EventDateTime {
-        let datetime = GTLRDateTime(date: date)
-        let dateObject = GTLRCalendar_EventDateTime()
-        dateObject.dateTime = datetime
-        return dateObject
-    }
-    
     func handleSignInButton() {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
         guard let rootViewController = windowScene.windows.first?.rootViewController else { return }
         let scopes = [kGTLRAuthScopeCalendarEvents]
-        //
-        ////        GIDSignIn.sharedInstance.currentUser?.addScopes(scopes, presenting: rootViewController)
-        //
-        //        guard let currentUser = GIDSignIn.sharedInstance.currentUser else {
-        //            return ;  /* Not signed in. */
-        //        }
-        //
-        //        currentUser.addScopes(scopes, presenting: rootViewController) { signInResult, error in
-        //            guard error == nil else { return }
-        //            guard let signInResult = signInResult else { return }
-        //            let user = signInResult.user
-        //            let grantedScopes = user.grantedScopes
-        //
-        //
-        //            // Check if the user granted access to the scopes you requested.
-        //        }
         
         GIDSignIn.sharedInstance.signIn(
             withPresenting: rootViewController) { signInResult, error in
@@ -78,42 +59,20 @@ struct ContentView: View {
                     print("scope missing: " + kGTLRAuthScopeCalendarEvents)
                 }
                 
-                
-                let emailAddress = user.profile?.email
-                
-                let fullName = user.profile?.name
-                let givenName = user.profile?.givenName
-                let familyName = user.profile?.familyName
-                
-                print(fullName)
-                
-                let accessToken = user.accessToken.tokenString
-                
                 let service = GTLRCalendarService()
                 service.authorizer = user.fetcherAuthorizer
                 
+                // create event data
                 let calendarEvent = GTLRCalendar_Event()
+                calendarEvent.summary = eventTitle
+                calendarEvent.descriptionProperty = eventTitle
+                let startDateTime = GTLRDateTime(date: startTime)
+                let endDateTime = GTLRDateTime(date: endTime)
+                calendarEvent.start = GTLRCalendar_EventDateTime()
+                calendarEvent.start?.dateTime = startDateTime
+                calendarEvent.end = GTLRCalendar_EventDateTime()
+                calendarEvent.end?.dateTime = endDateTime
                 
-                calendarEvent.summary = "test summary"
-                calendarEvent.descriptionProperty = "test description"
-                
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
-                let startDate = dateFormatter.date(from: "01/03/2024 13:00")
-                let endDate = dateFormatter.date(from: "01/03/2024 14:00")
-                
-                guard let toBuildDateStart = startDate else {
-                    print("Error getting start date")
-                    return
-                }
-                guard let toBuildDateEnd = endDate else {
-                    print("Error getting end date")
-                    return
-                }
-                
-                calendarEvent.start = buildDate(date: toBuildDateStart)
-                calendarEvent.end = buildDate(date: toBuildDateEnd)
-                                    
                 let query = GTLRCalendarQuery_EventsInsert.query(withObject: calendarEvent, calendarId: "yashu.liang@gmail.com")
                 service.executeQuery(query, completionHandler: { (ticket, event, error) in
                     if let error = error {
