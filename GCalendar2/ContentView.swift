@@ -40,21 +40,44 @@ struct ContentView: View {
     func handleSignInButton() {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
         guard let rootViewController = windowScene.windows.first?.rootViewController else { return }
-        let scopes = [kGTLRAuthScopeCalendar, kGTLRAuthScopeCalendarEvents]
+        let scopes = [kGTLRAuthScopeCalendarEvents]
+        //
+        ////        GIDSignIn.sharedInstance.currentUser?.addScopes(scopes, presenting: rootViewController)
+        //
+        //        guard let currentUser = GIDSignIn.sharedInstance.currentUser else {
+        //            return ;  /* Not signed in. */
+        //        }
+        //
+        //        currentUser.addScopes(scopes, presenting: rootViewController) { signInResult, error in
+        //            guard error == nil else { return }
+        //            guard let signInResult = signInResult else { return }
+        //            let user = signInResult.user
+        //            let grantedScopes = user.grantedScopes
+        //
+        //
+        //            // Check if the user granted access to the scopes you requested.
+        //        }
         
-        GIDSignIn.sharedInstance.currentUser?.addScopes(scopes, presenting: rootViewController)
-
-
         GIDSignIn.sharedInstance.signIn(
             withPresenting: rootViewController) { signInResult, error in
                 guard let result = signInResult else {
                     // Inspect error
+                    print(error)
                     return
                 }
                 
                 guard let signInResult = signInResult else { return }
                 
                 let user = signInResult.user
+                
+                
+                
+                let grantedScopes = user.grantedScopes
+                if grantedScopes == nil || !grantedScopes!.contains(kGTLRAuthScopeCalendarEvents) {
+                    // Request additional Drive scope.
+                    print("scope missing: " + kGTLRAuthScopeCalendarEvents)
+                }
+                
                 
                 let emailAddress = user.profile?.email
                 
@@ -65,7 +88,7 @@ struct ContentView: View {
                 print(fullName)
                 
                 let accessToken = user.accessToken.tokenString
-                                
+                
                 let service = GTLRCalendarService()
                 service.authorizer = user.fetcherAuthorizer
                 
@@ -90,21 +113,16 @@ struct ContentView: View {
                 
                 calendarEvent.start = buildDate(date: toBuildDateStart)
                 calendarEvent.end = buildDate(date: toBuildDateEnd)
-                
-                let insertQuery = GTLRCalendarQuery_EventsInsert.query(withObject: calendarEvent, calendarId: "primary")
-                
-                print(insertQuery)
-                
-                service.executeQuery(insertQuery) { (ticket, object, error) in
-                    if error == nil {
-                        print("Event inserted")
+                                    
+                let query = GTLRCalendarQuery_EventsInsert.query(withObject: calendarEvent, calendarId: "yashu.liang@gmail.com")
+                service.executeQuery(query, completionHandler: { (ticket, event, error) in
+                    if let error = error {
+                        print("Error: \(error)")
                     } else {
-                        print(error)
+                        print("Event added")
                     }
-                }
+                })
                 
-                
-                print(accessToken)
                 
             }
     }
