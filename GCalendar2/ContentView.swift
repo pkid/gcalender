@@ -20,16 +20,43 @@ struct ContentView: View {
     @State private var startTime = Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: Date()) ?? Date()
     @State private var endTime = Calendar.current.date(bySettingHour: 10, minute: 0, second: 0, of: Date()) ?? Date()
     @State private var eventTitle = ""
+    @State private var showSuccessBanner = false
+    @State private var showErrorBanner = false
+
+    
     
     var body: some View {
         VStack {
+            Spacer()
+
             TextField("Event Title", text: $eventTitle)
             DatePicker("Date", selection: $date, displayedComponents: .date)
             DatePicker("Start Time", selection: $startTime, displayedComponents: .hourAndMinute)
             DatePicker("End Time", selection: $endTime, displayedComponents: .hourAndMinute)
+            if showSuccessBanner {
+                Text("success")
+                    .frame(width: UIScreen.main.bounds.width, height: 50)
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .transition(.move(edge: .bottom))
+            }
+            
+            if showErrorBanner {
+                Text("error")
+                    .frame(width: UIScreen.main.bounds.width, height: 50)
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .transition(.move(edge: .bottom))
+            }
+
+            
+            Spacer()
+            
             
             GoogleSignInButton(action: handleSignInButton)
             
+            
+                        
         }
         .padding()
     }
@@ -77,8 +104,27 @@ struct ContentView: View {
                 service.executeQuery(query, completionHandler: { (ticket, event, error) in
                     if let error = error {
                         print("Error: \(error)")
+                        withAnimation {
+                            self.showErrorBanner = true
+                        }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation {
+                                self.showErrorBanner = false
+                            }
+                        }
                     } else {
                         print("Event added")
+                        eventTitle = ""
+                        withAnimation {
+                            self.showSuccessBanner = true
+                        }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation {
+                                self.showSuccessBanner = false
+                            }
+                        }
                     }
                 })
                 

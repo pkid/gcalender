@@ -14,8 +14,8 @@
             filePath = "GCalendar2/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "handleSignInButton()"
             landmarkType = "7">
          </BreakpointContent>
@@ -24,96 +24,32 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "AC4D52F6-DE9E-4C64-81EE-15A61E37D9FA"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GCalendar2/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "handleSignInButton()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "AC4D52F6-DE9E-4C64-81EE-15A61E37D9FA - ccd10e131ec45579"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.GTLRServiceTicket, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.GIDSignInResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in GCalendar2.ContentView.handleSignInButton() -&gt; ()"
-                  moduleName = "GCalendar2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zheng022/Desktop/GCalendar2/GCalendar2/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
-                  offsetFromSymbolStart = "664">
-               </Location>
-               <Location
-                  uuid = "AC4D52F6-DE9E-4C64-81EE-15A61E37D9FA - ccd10e131ec45579"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.GTLRServiceTicket, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.GIDSignInResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in GCalendar2.ContentView.handleSignInButton() -&gt; ()"
-                  moduleName = "GCalendar2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zheng022/Desktop/GCalendar2/GCalendar2/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
-                  offsetFromSymbolStart = "152">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8EA506A6-9B4F-4A46-85CD-0A6081FDF2A2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GCalendar2/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "handleSignInButton()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8EA506A6-9B4F-4A46-85CD-0A6081FDF2A2 - ccd10e131ec454bf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.GTLRServiceTicket, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.GIDSignInResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in GCalendar2.ContentView.handleSignInButton() -&gt; ()"
-                  moduleName = "GCalendar2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zheng022/Desktop/GCalendar2/GCalendar2/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "152">
-               </Location>
-               <Location
-                  uuid = "8EA506A6-9B4F-4A46-85CD-0A6081FDF2A2 - ccd10e131ec454bf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.GTLRServiceTicket, Swift.Optional&lt;Any&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.GIDSignInResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in GCalendar2.ContentView.handleSignInButton() -&gt; ()"
-                  moduleName = "GCalendar2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zheng022/Desktop/GCalendar2/GCalendar2/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "340">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,8 +62,8 @@
             filePath = "GCalendar2/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "handleSignInButton()"
             landmarkType = "7">
             <Locations>
