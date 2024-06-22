@@ -1,0 +1,14 @@
+name: Hello World
+
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  hello:
+    runs-on: self-hosted  # This job runs on an Ubuntu virtual machine
+
+    steps:
+      - uses: actions/checkout@v3  # Checks out the code from the repository
+      - run: echo "Hello, World!"  # Runs a command that prints "Hello, World
